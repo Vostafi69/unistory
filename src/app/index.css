@@ -69,3 +69,30 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  @font-face {
+    font-family: "AvenirNextCyr-Regular";
+    src: url("/fonts/AvenirNextCyr/avenirnextcyr-regular.eot");
+    src:
+      url("/fonts/AvenirNextCyr/avenirnextcyr-regular.eot?#iefix")
+        format("embedded-opentype"),
+      url("/fonts/AvenirNextCyr/avenirnextcyr-regular.woff2") format("woff2"),
+      url("/fonts/AvenirNextCyr/avenirnextcyr-regular.woff") format("woff"),
+      url("/fonts/AvenirNextCyr/avenirnextcyr-regular.ttf") format("truetype"),
+      url("/fonts/AvenirNextCyr/avenirnextcyr-regular.svg#avenirnextcyr-regular")
+        format("svg");
+  }
+  @font-face {
+    font-family: "BebasNeue";
+    src: url("/fonts/BebasNeue/bebas-neue-bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "BebasNeue";
+    src: url("/fonts/BebasNeue/bebas_neue_regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
+}
