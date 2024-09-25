@@ -1,2 +1,2 @@
 export { Header } from "./header";
-export { Hero } from "./hero";
+export { RoadmapStats } from "./roadmapStats";
