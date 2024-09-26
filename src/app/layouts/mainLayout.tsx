@@ -7,7 +7,7 @@ interface MainLayoutProps {
 
 export const MainLayout: FC<MainLayoutProps> = ({ headerSlot }) => {
   return (
-    <div className="min-h-screen w-screen bg-background px-16 text-base-color">
+    <div className="min-h-screen w-full bg-background px-16 text-base-color">
       <div className="mx-auto max-w-[1312px]">
         {headerSlot}
         <main>
