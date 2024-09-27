@@ -26,7 +26,7 @@ export const RoadmapStatsList: FC = () => {
             <RoadmapStatsItem desc={stat.desc} value={stat.value} />
           </Reveal>
           <Reveal delay={0.25} axis="x" shift={200}>
-            <div className="my-2 h-[0.5px] w-full bg-[#D2C4C4]" />
+            <div className="my-2 h-[0.5px] w-full bg-[#D2C4C4] opacity-60" />
           </Reveal>
         </div>
       ))}
