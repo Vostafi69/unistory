@@ -1,5 +1,5 @@
 import { ConnectMetamaskButton } from "@/features";
-import { Reveal } from "@/shared/lib/components/reveal";
+import { Reveal } from "@/shared/lib/framerMotion/components/reveal";
 import { FC } from "react";
 
 export const Header: FC = () => {

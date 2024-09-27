@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { RoadmapStatsList } from "./roadmapStatsList";
-import { Reveal } from "@/shared/lib/components/reveal";
+import { Reveal } from "@/shared/lib/framerMotion/components/reveal";
 
 export const RoadmapStats: FC = () => {
   return (

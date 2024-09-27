@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { RoadmapStatsItem } from "./roadmapStatsItem";
-import { Reveal } from "@/shared/lib/components/reveal";
+import { Reveal } from "@/shared/lib/framerMotion/components/reveal";
 
 const ROADMAP_STATS = [
   {
