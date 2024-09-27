@@ -1,4 +1,8 @@
-import { RegistrBetaAccessForm, RoadmapStats } from "@/widgets";
+import {
+  ParticipationTable,
+  RegistrBetaAccessForm,
+  RoadmapStats,
+} from "@/widgets";
 import { FC } from "react";
 import { Reveal } from "@/shared/lib/framerMotion/components/reveal";
 import { Planet } from "@/shared/ui/planet";
@@ -53,7 +57,7 @@ export const MainPage: FC = () => {
           </div>
         </div>
       </section>
-      <section className="pb-[86px] pt-12">
+      <section className="flex flex-row justify-between pb-[86px] pt-12">
         <div className="w-[421px]">
           <Reveal>
             <h2 className="font-BebasNeue text-3xl font-bold text-primary">
@@ -70,6 +74,14 @@ export const MainPage: FC = () => {
           </Reveal>
           <div className="mt-9">
             <RegistrBetaAccessForm />
+          </div>
+        </div>
+        <div className="w-full max-w-[644px]">
+          <h2 className="font-BebasNeue text-3xl font-bold">
+            Participation listing (enable only for participants)
+          </h2>
+          <div className="mt-9">
+            <ParticipationTable />
           </div>
         </div>
       </section>
