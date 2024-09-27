@@ -14,6 +14,16 @@ const usersApi = baseApi.injectEndpoints({
         `/data/?page=${page}&perPage=${perPage}`,
       transformResponse: (response: unknown) =>
         UsersResponseModel.parse(response),
+      serializeQueryArgs: ({ endpointName }) => {
+        return endpointName;
+      },
+      merge: (currentCache, newItems) => {
+        currentCache.items.push(...newItems.items);
+        currentCache.meta.currentPage += 1;
+      },
+      forceRefetch({ currentArg, previousArg }) {
+        return currentArg !== previousArg;
+      },
     }),
     getUser: build.query<User, number>({
       providesTags: ["Users"],
@@ -24,4 +34,5 @@ const usersApi = baseApi.injectEndpoints({
   overrideExisting: true,
 });
 
-export const { useGetUsersQuery, useGetUserQuery } = usersApi;
+export const { useGetUsersQuery, useLazyGetUsersQuery, useGetUserQuery } =
+  usersApi;
