@@ -76,7 +76,7 @@ export const MainPage: FC = () => {
             <RegistrBetaAccessForm />
           </div>
         </div>
-        <div className="w-full max-w-[644px]">
+        <div className="w-full max-w-[741px]">
           <h2 className="font-BebasNeue text-3xl font-bold">
             Participation listing (enable only for participants)
           </h2>
