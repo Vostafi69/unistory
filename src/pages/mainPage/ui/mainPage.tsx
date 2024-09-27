@@ -11,10 +11,8 @@ export const MainPage: FC = () => {
           <div className="relative space-y-[42px]">
             <div className="relative select-none">
               <h1 className="relative z-10 font-BebasNeue text-[120px] font-bold leading-none">
-                <Reveal delay={0.25} duration={0.75}>
-                  Explore Your own planet
-                </Reveal>
-                <Reveal delay={0.45} duration={0.75}>
+                <Reveal delay={0.25}>Explore Your own planet</Reveal>
+                <Reveal delay={0.45}>
                   In{" "}
                   <span className="text-background shadow-white text-shadow">
                     our New
@@ -23,10 +21,8 @@ export const MainPage: FC = () => {
                 </Reveal>
               </h1>
               <div className="absolute left-0 top-0 z-30 !mt-0 bg-transparent font-BebasNeue text-[120px] font-bold leading-none text-primary [mask-image:_url('/mars.svg')] [mask-position:_right_24px_center] [mask-repeat:_no-repeat] [mask-size:_322px]">
-                <Reveal delay={0.25} duration={0.75}>
-                  Explore Your own planet
-                </Reveal>
-                <Reveal delay={0.45} duration={0.75}>
+                <Reveal delay={0.25}>Explore Your own planet</Reveal>
+                <Reveal delay={0.45}>
                   In{" "}
                   <span className="text-background shadow-white text-shadow">
                     our New
@@ -40,7 +36,7 @@ export const MainPage: FC = () => {
               planetBadge={<Planet.Badge />}
               planetRings={<Planet.Rings />}
             />
-            <Reveal delay={0.55} duration={0.75}>
+            <Reveal delay={0.55}>
               <p className="max-w-[421px] font-AvenirNextCyr">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
