@@ -3,6 +3,7 @@ import { Image } from "../image";
 import { PlanetBadge } from "./planetBadge";
 import { PlanetRings } from "./planetRings";
 import { cn } from "@/shared/lib/utils";
+import { motion } from "framer-motion";
 
 interface PlanetProps {
   planetBadge?: ReactNode;
@@ -21,12 +22,27 @@ export function Planet({
     <div className={cn("!mt-0", className)}>
       <div className="relative h-[322px] w-[320px]">
         {planetRings}
-        <Image
-          className="z-[15] animate-spin-slow object-cover"
-          fill
-          src="./assets/planet.png"
-          alt="Planet"
-        />
+        <motion.div
+          className="relative z-[15] h-full w-full"
+          variants={{
+            hidden: { opacity: 0, scale: 0.95 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          transition={{
+            duration: 2,
+            delay: 0.25,
+            ease: "easeOut",
+          }}
+          initial="hidden"
+          animate="visible"
+        >
+          <Image
+            className="animate-spin-slow object-cover"
+            fill
+            src="./assets/planet.png"
+            alt="Planet"
+          />
+        </motion.div>
       </div>
       {planetBadge}
       {planetPings && (

@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { FC, ReactNode } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { FC, ReactNode, useEffect, useRef } from "react";
 
 interface RevealProps {
   children: ReactNode;
@@ -18,8 +18,18 @@ export const Reveal: FC<RevealProps> = ({
   axis = "y",
   shift = 75,
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView]);
+
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden" ref={ref}>
       <motion.div
         variants={{
           hidden: { opacity: 0, [axis]: shift * direction },
@@ -31,7 +41,7 @@ export const Reveal: FC<RevealProps> = ({
           ease: "easeOut",
         }}
         initial="hidden"
-        animate="visible"
+        animate={mainControls}
       >
         {children}
       </motion.div>
