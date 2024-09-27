@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { RoadmapStatsItem } from "./roadmapStatsItem";
+import { Reveal } from "@/shared/lib/components/reveal";
 
 const ROADMAP_STATS = [
   {
@@ -18,9 +19,16 @@ const ROADMAP_STATS = [
 
 export const RoadmapStatsList: FC = () => {
   return (
-    <dl className="space-y-2 divide-y-[0.5px] divide-[#D2C4C4] [&>:not(:first-child)]:pt-2">
+    <dl>
       {ROADMAP_STATS.map((stat, index) => (
-        <RoadmapStatsItem key={index} desc={stat.desc} value={stat.value} />
+        <div key={index}>
+          <Reveal delay={0.25 * ++index}>
+            <RoadmapStatsItem desc={stat.desc} value={stat.value} />
+          </Reveal>
+          <Reveal delay={0.25} axis="x" shift={200}>
+            <div className="my-2 h-[0.5px] w-full bg-[#D2C4C4]" />
+          </Reveal>
+        </div>
       ))}
     </dl>
   );
