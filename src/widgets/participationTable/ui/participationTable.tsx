@@ -1,3 +1,5 @@
+import { useGetUsersQuery } from "@/entities";
+import { ScrollArea } from "@/shared/ui/scrollArea";
 import {
   Table,
   TableBody,
@@ -8,35 +10,37 @@ import {
 } from "@/shared/ui/table";
 import { FC } from "react";
 
-const USERS: {
-  name: string;
-  email: string;
-  wallet: string;
-}[] = new Array(10).fill({
-  name: "Amaan Hickman",
-  email: "walob95230@nubotel.com",
-  wallet: "0x279D9f0c10fBB3D44fEf96...",
-});
-
 export const ParticipationTable: FC = () => {
+  const { isSuccess, isFetching, data } = useGetUsersQuery({ perPage: 20 });
+
   return (
-    <Table>
-      <TableHeader className="font-BebasNeue uppercase">
-        <TableRow>
-          <TableHead>Name</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Wallet</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody className="font-AvenirNextCyr">
-        {USERS.map(({ name, email, wallet }) => (
+    <ScrollArea
+      className="h-[590px] pr-[97px]"
+      type="auto"
+      scrollAreaScrollbarClassName="!right-[56px] pt-[41px] px-[3px] after:absolute after:top-[42px] after:rounded-full after:bottom-0 after:w-[1px] after:bg-white after:left-[4px] after:opacity-60 after:-z-[1]"
+      data-lenis-prevent
+    >
+      <Table>
+        <TableHeader className="sticky top-0 bg-background font-BebasNeue uppercase outline outline-1">
           <TableRow>
-            <TableCell>{name}</TableCell>
-            <TableCell>{email}</TableCell>
-            <TableCell>{wallet}</TableCell>
+            <TableHead>Name</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead>Wallet</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody className="font-AvenirNextCyr">
+          {isSuccess &&
+            data.items.map(({ address, email, username, id }) => (
+              <TableRow key={id}>
+                <TableCell>{username}</TableCell>
+                <TableCell>{email}</TableCell>
+                <TableCell>
+                  <p className="w-[196px] truncate">{address}</p>
+                </TableCell>
+              </TableRow>
+            ))}
+        </TableBody>
+      </Table>
+    </ScrollArea>
   );
 };
