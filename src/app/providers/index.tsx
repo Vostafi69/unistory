@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { RoutProvider } from "./routerProvider/routProvider";
 import { LenisProvider } from "./scrollProvider.tsx/lenisProvider";
-import { WrapWagmiProvider } from "./wagmiProvide/wagmiProvide";
+import { WrapWagmiProvider } from "./wagmiProvider/wagmiProvide";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
 import { store } from "../store/store";
