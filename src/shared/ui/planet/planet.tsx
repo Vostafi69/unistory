@@ -39,7 +39,7 @@ export function Planet({
           <Image
             className="animate-spin-slow object-cover"
             fill
-            src="./assets/planet.png"
+            src="/assets/planet.png"
             alt="Planet"
           />
         </motion.div>
@@ -47,6 +47,7 @@ export function Planet({
       {planetBadge}
       {planetPings && (
         <>
+          <div className="absolute -top-[81px] left-1/2 h-[6px] w-[6px] -translate-y-1/2 rounded-full bg-primary before:absolute before:inset-0 before:animate-ping before:rounded-full before:bg-primary before:delay-500" />
           <div className="absolute -right-[86px] top-1/2 h-[6px] w-[6px] -translate-y-1/2 rounded-full bg-primary before:absolute before:inset-0 before:animate-ping before:rounded-full before:bg-primary" />
           <div className="absolute -bottom-[85px] left-1/2 h-[6px] w-[6px] -translate-x-1/2 rounded-full bg-primary before:absolute before:inset-0 before:animate-ping before:rounded-full before:bg-primary before:delay-200" />
         </>
