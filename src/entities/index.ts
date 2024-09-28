@@ -3,4 +3,5 @@ export {
   type UsersResponse,
   useGetUserQuery,
   useGetUsersQuery,
+  UserCard,
 } from "./user";
