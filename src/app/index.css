@@ -68,6 +68,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  .slide-in {
+    @apply fixed left-0 top-0 z-50 h-screen w-full origin-bottom bg-primary;
+  }
+  .slide-out {
+    @apply fixed left-0 top-0 z-50 h-screen w-full origin-top bg-primary;
+  }
 }
 
 @layer base {
