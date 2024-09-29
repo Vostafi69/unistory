@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const PlanetBadge: FC = () => {
   return (
     <motion.div
-      className="absolute -top-[98px] right-1/2 translate-x-3"
+      className="absolute -top-[98px] right-1/2 z-30 translate-x-3"
       variants={{
         hidden: { opacity: 0 },
         visible: { opacity: 1 },
