@@ -5,7 +5,7 @@ const initialState: ParticipationTableSliceState = {
   page: 0,
 };
 
-export const participationTableReducer = createSlice({
+export const participationTableSlice = createSlice({
   name: "participationTableSlice",
   initialState,
   reducers: {
@@ -15,6 +15,5 @@ export const participationTableReducer = createSlice({
   },
 });
 
-export const { incrementPage } = participationTableReducer.actions;
-
-export default participationTableReducer.reducer;
+export const { incrementPage } = participationTableSlice.actions;
+export const participationTableReducer = participationTableSlice.reducer;

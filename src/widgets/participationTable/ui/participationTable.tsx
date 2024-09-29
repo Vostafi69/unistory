@@ -1,4 +1,4 @@
-import { useGetUsersQuery, useLazyGetUsersQuery } from "@/entities";
+import { useGetUsersQuery } from "@/entities";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/rtk/hooks";
 import { Loader } from "@/shared/ui/loader";
 import { ScrollArea } from "@/shared/ui/scrollArea";

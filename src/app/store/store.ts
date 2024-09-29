@@ -1,5 +1,5 @@
 import { baseApi } from "@/shared/lib/api";
-import participationTableReducer from "@/widgets/participationTable/model/participationTableSlice";
+import { participationTableReducer } from "@/widgets";
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
