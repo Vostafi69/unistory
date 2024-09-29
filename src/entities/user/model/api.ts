@@ -25,14 +25,25 @@ const usersApi = baseApi.injectEndpoints({
         return currentArg !== previousArg;
       },
     }),
-    getUser: build.query<User, number>({
+    getUser: build.query<User, string>({
       providesTags: ["Users"],
-      query: (id: number) => `/data/id/${id}`,
+      query: (id: string) => `/data/id/${id}`,
+      transformResponse: (response: unknown) => UserModel.parse(response),
+    }),
+    getUserByAddress: build.query<User, string>({
+      providesTags: ["Users"],
+      query: (address: string) => `/data/address/${address}`,
       transformResponse: (response: unknown) => UserModel.parse(response),
     }),
   }),
   overrideExisting: true,
 });
 
-export const { useGetUsersQuery, useLazyGetUsersQuery, useGetUserQuery } =
-  usersApi;
+export const {
+  useGetUsersQuery,
+  useLazyGetUsersQuery,
+  useGetUserQuery,
+  useGetUserByAddressQuery,
+  useLazyGetUserQuery,
+  useLazyGetUserByAddressQuery,
+} = usersApi;
