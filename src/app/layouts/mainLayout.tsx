@@ -10,8 +10,6 @@ export const MainLayout: FC<MainLayoutProps> = ({ headerSlot }) => {
   const location = useLocation();
   const element = useOutlet();
 
-  console.log(element);
-
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background px-16 text-base-color">
       <div className="mx-auto max-w-[1312px]">
