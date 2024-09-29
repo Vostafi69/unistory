@@ -22,7 +22,7 @@ const usersApi = baseApi.injectEndpoints({
         currentCache.meta.currentPage += 1;
       },
       forceRefetch({ currentArg, previousArg }) {
-        return currentArg !== previousArg;
+        return currentArg?.page !== previousArg?.page;
       },
     }),
     getUser: build.query<User, string>({
