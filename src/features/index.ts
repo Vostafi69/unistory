@@ -1,3 +1,9 @@
 export { ConnectMetamaskButton } from "./connectMetamask";
-export { GetEarlyAccessForm } from "./getEarlyAccess";
-export { EarlyAccessReducer } from "./getEarlyAccess";
+export {
+  GetEarlyAccessForm,
+  EarlyAccessReducer,
+  addTolist,
+  deleteUser,
+  setUser,
+  removeFromList,
+} from "./getEarlyAccess";

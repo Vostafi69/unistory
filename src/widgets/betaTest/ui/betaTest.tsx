@@ -1,15 +1,16 @@
 import { UserCard } from "@/entities";
-import { GetEarlyAccessForm } from "@/features";
+import { addTolist, GetEarlyAccessForm } from "@/features";
 import { Reveal } from "@/shared/lib/framerMotion/components/reveal";
 import { Button } from "@/shared/ui/button";
 import { FC } from "react";
 import { ParticipationTable } from "./participationTable";
-import { useAppSelector } from "@/shared/lib/rtk/hooks";
+import { useAppDispatch, useAppSelector } from "@/shared/lib/rtk/hooks";
 import { useAccount } from "wagmi";
 
 export const BetaTest: FC = () => {
-  const user = useAppSelector((state) => state.earlyAccess.user);
+  const { user, isListed } = useAppSelector((state) => state.earlyAccess);
   const { address } = useAccount();
+  const dispatch = useAppDispatch();
 
   return (
     <section className="flex flex-row justify-between pb-[86px] pt-12">
@@ -46,7 +47,13 @@ export const BetaTest: FC = () => {
               emailComponent={<UserCard.Email />}
             />
             <Reveal delay={0.25}>
-              <Button className="mt-[28px]">LIST ME TO The TABLE</Button>
+              <Button
+                disabled={isListed}
+                className="mt-[28px]"
+                onClick={() => dispatch(addTolist())}
+              >
+                LIST ME TO The TABLE
+              </Button>
             </Reveal>
           </div>
         )}

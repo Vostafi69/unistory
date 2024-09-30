@@ -14,6 +14,9 @@ import { FC } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useNavigate } from "react-router-dom";
 import { incrementPage } from "../model/participationTableSlice";
+import { Button } from "@/shared/ui/button";
+import { X } from "lucide-react";
+import { removeFromList } from "@/features";
 
 const viewPortId = "scrollabelTable";
 
@@ -22,6 +25,7 @@ export const ParticipationTable: FC = () => {
   const { isSuccess, data } = useGetUsersQuery({ page: currentPage });
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const { user, isListed } = useAppSelector((state) => state.earlyAccess);
 
   return (
     <ScrollArea
@@ -39,6 +43,7 @@ export const ParticipationTable: FC = () => {
           loader={<Loader />}
           scrollableTarget={viewPortId}
           scrollThreshold={1}
+          className="!overflow-visible"
         >
           <Table>
             <TableHeader className="sticky top-0 bg-background font-BebasNeue uppercase outline outline-1">
@@ -49,6 +54,24 @@ export const ParticipationTable: FC = () => {
               </TableRow>
             </TableHeader>
             <TableBody className="font-AvenirNextCyr">
+              {user && isListed && (
+                <TableRow className="!text-primary">
+                  <TableCell>{user.username}</TableCell>
+                  <TableCell>{user.email}</TableCell>
+                  <TableCell>
+                    <p className="w-[196px] truncate">{user.address}</p>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      className="bg-transparent hover:bg-transparent hover:text-primary"
+                      size={"icon"}
+                      onClick={() => dispatch(removeFromList())}
+                    >
+                      <X className="h-3 w-3" />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              )}
               {data.items.map(({ address, email, username, id }) => (
                 <TableRow
                   className="cursor-pointer transition-colors hover:bg-white/5"
