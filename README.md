@@ -88,7 +88,10 @@ $ npm run dev
 
 ## Примеры
 
-Таблица отображения счетчиков воды
+Главная страница <hr/>
 
 ![Главная страница](https://github.com/Vostafi69/unistory/blob/main/examples/mainPage.png)
+
+Главная страница <hr/>
+
 ![Страница участника](https://github.com/Vostafi69/unistory/blob/main/examples/memberPage.png)
