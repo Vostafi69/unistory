@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 export const MainPage: FC = () => {
   return (
-    <div>
+    <>
       <section className="relative flex min-h-[628px] flex-row items-end justify-between pb-[60px]">
         <div className="flex w-full items-start justify-between">
           <div className="relative space-y-[42px]">
@@ -85,6 +85,6 @@ export const MainPage: FC = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
