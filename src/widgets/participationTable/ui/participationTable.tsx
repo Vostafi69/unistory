@@ -23,14 +23,6 @@ export const ParticipationTable: FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const handleRowClick = (id: number) => {
-    navigate(`member/${id}`);
-  };
-
-  const handleGetNext = () => {
-    dispatch(incrementPage());
-  };
-
   return (
     <ScrollArea
       className="h-[590px] pr-[97px]"
@@ -43,7 +35,7 @@ export const ParticipationTable: FC = () => {
         <InfiniteScroll
           dataLength={data.items.length}
           hasMore={data.meta.totalPages > currentPage}
-          next={handleGetNext}
+          next={() => dispatch(incrementPage())}
           loader={<Loader />}
           scrollableTarget={viewPortId}
           scrollThreshold={1}
@@ -61,7 +53,7 @@ export const ParticipationTable: FC = () => {
                 <TableRow
                   className="cursor-pointer transition-colors hover:bg-white/5"
                   key={id}
-                  onClick={() => handleRowClick(id)}
+                  onClick={() => navigate(`member/${id}`)}
                 >
                   <TableCell>{username}</TableCell>
                   <TableCell>{email}</TableCell>
