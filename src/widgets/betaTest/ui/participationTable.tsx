@@ -51,6 +51,7 @@ export const ParticipationTable: FC = () => {
                 <TableHead>Name</TableHead>
                 <TableHead>Email</TableHead>
                 <TableHead>Wallet</TableHead>
+                <TableHead className={!isListed ? "hidden" : ""}></TableHead>
               </TableRow>
             </TableHeader>
             <TableBody className="font-AvenirNextCyr">
