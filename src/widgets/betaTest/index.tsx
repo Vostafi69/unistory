@@ -1,2 +1,2 @@
+export { BetaTest } from "./ui/betaTest";
 export { participationTableReducer } from "./model/participationTableSlice";
-export { ParticipationTable } from "./ui/participationTable";

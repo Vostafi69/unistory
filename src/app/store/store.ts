@@ -1,3 +1,4 @@
+import { EarlyAccessReducer } from "@/features";
 import { baseApi } from "@/shared/lib/api";
 import { participationTableReducer } from "@/widgets";
 import { configureStore } from "@reduxjs/toolkit";
@@ -6,6 +7,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 export const store = configureStore({
   reducer: {
     participationTable: participationTableReducer,
+    earlyAccess: EarlyAccessReducer,
     [baseApi.reducerPath]: baseApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

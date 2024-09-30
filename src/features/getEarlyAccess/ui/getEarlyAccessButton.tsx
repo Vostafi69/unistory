@@ -1,9 +1,15 @@
 import { Button } from "@/shared/ui/button";
 import { FC } from "react";
 
-export const GetEarlyAccessButton: FC = () => {
+interface GetEarlyAccessButtonProps {
+  disabled?: boolean;
+}
+
+export const GetEarlyAccessButton: FC<GetEarlyAccessButtonProps> = ({
+  disabled = false,
+}) => {
   return (
-    <Button className="uppercase" type="submit">
+    <Button disabled={disabled} className="uppercase" type="submit">
       Get EARLY ACCESS
     </Button>
   );

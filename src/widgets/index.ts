@@ -1,4 +1,5 @@
 export { Header } from "./header";
-export { RoadmapStats } from "./roadmapStats";
-export { RegistrBetaAccessForm } from "./registrBetaAccessForm";
-export { ParticipationTable } from "./participationTable";
+export { Hero } from "./hero";
+export { BetaTest } from "./betaTest";
+export { Member } from "./member";
+export { participationTableReducer } from "./betaTest";
