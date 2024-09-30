@@ -1,50 +1,94 @@
-# React + TypeScript + Vite
+<h1 align="center">Тестовое задание</h1>
+<h2 align="center">на позицию Frontend/Solidity Developer</h2>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Создать приложение на React, сподключением криптокашелька и выводом информации с бэкэнда.
+>
+> ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white)
 
-Currently, two official plugins are available:
+## Содержание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Требования](#Требования)
+- [Технологии](#технологии)
+- [Начало работы](#начало-работы)
+- [Примеры](#Примеры)
 
-## Expanding the ESLint configuration
+## Требования
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+> Дизайн:
+>
+> https://www.figma.com/file/8ejkTFQVtBPLcBIRvdzZI8?embed_host=notion&kind=file&node-id=0%3A1&t=Vohq9u7LNsNutjXD-1&viewer=1
 
-- Configure the top-level `parserOptions` property like this:
+<hr/>
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Сверстать 2 страницы в соответствии с дизайном страницы:
+
+- Главная страница
+- Страница участника
+
+2. Подключить функционал к страницам:
+   При открытии страницы, уведомить пользователя о том, что потребуется расширение Metamask для браузера.
+   Выполнить подключение криптокошелька Metamask при нажатии на кнопку CONNECT METAMASK в шапке. После подключения
+   необходимо отображать адрес подключенного кошелька вместо кнопки.
+
+При заполнении формы, BETA TEST REGISTRATION загрузить данные для таблицы PARTICIPATION LISTING и отобразить ее, введенные
+данные добавить в начало таблицы. Новая запись должна содержать введенные name, email и адрес подключенного криптокошелька.
+Сделать удаление созданной записи из таблицы (другие не должны удаляться).
+
+При клике на запись таблицы должна открываться страница участника. Запись, добавленная пользователем должна быть некликабельной.
+Отображать на странице участника данные, полученные с бэкенда.
+
+<hr/>
+
+- Использование TypeScript.
+- Должен подключаться кошелек Metamask. Для подключения рекомендуется использовать библиотеку wagmi.
+- Использовать роутер для перехода между страницами.
+- Будет преимуществом:
+- Сделать бесконечный список для таблицы (новые данные должны подгружаться с бэкенда).
+- Спроектировать приложение согласно FSD.
+- Использовать библиотеку для управления запросами (TanStack Query, RTK Query, SWR или подобную).
+- Развернуть приложение на одной из бесплатных платформ (Netlify, Github Pages или подобные).
+- Использование Tailwind для стилизации.
+
+## Технологии
+
+- [React](https://react.dev/)
+- [Shadcn](https://ui.shadcn.com/docs/components/accordion)
+- [Vite](https://vitejs.dev/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [RTK](https://redux-toolkit.js.org/)
+- [Wagmi](https://wagmi.sh/)
+- [FramerMotion](https://github.com/framer/motion)
+
+## Начало работы
+
+Стянуть проект:
+
+```sh
+$ git clone https://github.com/Vostafi69/unistory.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Перейти в директорию проекта:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+$ cd unistory
 ```
+
+Установить зависимости:
+
+```sh
+$ npm i
+```
+
+Запустить проект:
+
+```sh
+$ npm run dev
+```
+
+## Примеры
+
+Таблица отображения счетчиков воды
+
+![Главная страница](https://github.com/Vostafi69/unistory/blob/main/examples/mainPage.png)
+![Страница участника](https://github.com/Vostafi69/unistory/blob/main/examples/memberPage.png)
