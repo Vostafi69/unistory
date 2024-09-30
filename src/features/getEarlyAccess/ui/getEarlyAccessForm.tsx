@@ -13,11 +13,11 @@ import {
 } from "@/shared/ui/form";
 import { Input } from "@/shared/ui/input";
 import { formSchema } from "../model/formSchema";
-import { GetEarlyAccessButton } from "./getEarlyAccessButton";
 import { Reveal } from "@/shared/lib/framerMotion/components/reveal";
 import { useAppDispatch } from "@/shared/lib/rtk/hooks";
 import { useAccount } from "wagmi";
 import { setUser } from "../model/earlyAccessSlice";
+import { Button } from "@/shared/ui/button";
 
 export const GetEarlyAccessForm: FC = () => {
   const { address } = useAccount();
@@ -77,9 +77,9 @@ export const GetEarlyAccessForm: FC = () => {
           />
         </Reveal>
         <Reveal delay={0.55}>
-          <div className="pt-[6px]">
-            <GetEarlyAccessButton disabled={!!!address} />
-          </div>
+          <Button disabled={!!!address} className="pt-[6px]" type="submit">
+            Get EARLY ACCESS
+          </Button>
         </Reveal>
       </form>
     </Form>
